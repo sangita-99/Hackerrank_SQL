@@ -1,0 +1,33 @@
+-- Filtering by country and population
+SELECT *
+FROM CITY
+WHERE POPULATION > 100000
+AND COUNTRYCODE = 'USA';
+
+SELECT NAME
+FROM CITY
+WHERE COUNTRYCODE = 'USA'
+AND POPULATION > 120000;
+
+-- Full table selection
+SELECT *
+FROM CITY;
+
+-- Filtering by primary key
+SELECT *
+FROM CITY
+WHERE ID = 1661;
+
+-- Country-based filtering
+SELECT *
+FROM CITY
+WHERE COUNTRYCODE = 'JPN';
+
+-- Selecting specific columns
+SELECT CITY, STATE
+FROM STATION;
+
+-- DISTINCT with condition
+SELECT DISTINCT CITY
+FROM STATION
+WHERE ID % 2 = 0;
