@@ -1,0 +1,21 @@
+-- Sum of longitude values
+SELECT ROUND(SUM(LONG_W), 2)
+FROM STATION;
+
+-- Longitude at maximum latitude below threshold
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N = (
+    SELECT MAX(LAT_N)
+    FROM STATION
+    WHERE LAT_N < 137.2345
+);
+
+-- Longitude at minimum latitude above threshold
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N = (
+    SELECT MIN(LAT_N)
+    FROM STATION
+    WHERE LAT_N > 38.7780
+);
